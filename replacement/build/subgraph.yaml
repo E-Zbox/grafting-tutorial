@@ -2,7 +2,7 @@ specVersion: 1.0.0
 indexerHints:
   prune: auto
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 features:
   - grafting
 graft:
@@ -24,8 +24,8 @@ dataSources:
         - Withdrawal
       abis:
         - name: Lock
-          file: ./abis/Lock.json
+          file: Lock/abis/Lock.json
       eventHandlers:
         - event: Withdrawal(uint256,uint256)
           handler: handleWithdrawal
-      file: ./src/lock.ts
+      file: Lock/Lock.wasm
